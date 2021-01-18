@@ -128,7 +128,12 @@ confirm(n);
 
 // 8. Info. Спросить у пользователя имя, фамилию, возраст и пол. Результат записать в переменную и вывести в консоль одной строкой как поле info.
 var man = {name: 'Alex', soname: 'Pupkin', old: '35', gender: 'Man'};
-console.info(man);
+var name = prompt('What is your name?');
+var soname = prompt('What is your soname?');
+var old = prompt('How old are you?');
+var gender = prompt('What is your gender?');
+var person = console.info(name, soname, old, gender);
+console.info(person);
 
 // 9. Global. Вывести в консоль window. Изучить результат.
 console.log(window);
