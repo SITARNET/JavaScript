@@ -23,9 +23,15 @@
 // console.timeEnd ('time'); // за сколько выполнился скрипт
 // console.warn('Warning!!!') // предупреждающее сообщение
 
-console.log('Hello world');
+// 1. "Hello world". Вывести в консоль "Hello world" без использования латиницы.
+console.log('\u0048\u0065\u006c\u006c\u006f \u0077\u006f\u0072\u006c\u0064');
+
+// 2. Error. Вывести в консоль Error. (console.error())
 console.error('Error');
 
+// 3. Literals. Вывести в консоль литералы JS: Null, Boolean Literals(оба), Numeric Literals(всех систем счисления), String Literals(3 базовых)
+// 4. Group. Сгрупировать все литералы по типу и вывести группу с подписью конкретной группы.
+// 5. Time. Засечь время выполнения кода из задания 4. (console.time()/console.timeEnd())
 console.time();
 
 console.group('Null Literals');
@@ -112,36 +118,54 @@ console.groupEnd();
 
 console.timeEnd();
 
+// 6. Age Спросить у пользователя сколько ему лет. Результат вывести в консоль. (prompt())
 var m = 'How old are you?';
 prompt(m);
 
+// 7. 18- Спросить у пользователя есть ли ему 18. Результат вывести в консоль. (confirm())
 var n = 'You are 18 years old?';
 confirm(n);
 
+// 8. Info. Спросить у пользователя имя, фамилию, возраст и пол. Результат записать в переменную и вывести в консоль одной строкой как поле info.
 var man = {name: 'Alex', soname: 'Pupkin', old: '35', gender: 'Man'};
 console.info(man);
 
+// 9. Global. Вывести в консоль window. Изучить результат.
 console.log(window);
 
+// 10. DOM. Вывести в консоль document в 2 вариантах: dir и log. Сравнить результат.
 console.log(document); // выводит структуру html
 
 console.dir(document); // выводит список всех типов, классов... html
 
-//let dude; // не нашло
-//const dude; // syntax error
-//var dude; // undefained
-//console.log(window);
+// 11. Dude. Создать переменную чувак без оператора var и вывести в консоль window. Ctrl+F в консоли, найти чувака в window.
+// Перезапустить страницу, сделать то же но с оператором var. Изучить результат.
 
+// let dude; // не нашло
+// const dude; // syntax error
+// var dude; // undefained
+// console.log(window);
+
+// 12. Strict dude. Повторить задание 11 с директивой "use strict". Изучить результат.
 'use strict'
 //let dude; // не нашло
 //const dude; // syntax error
 var dude; // undefained
 console.log(window);
 
+// 13. Value exchange. Даны две переменные с числами a = 8, b = 5. Составить фрагмент программы, после исполнения которого
+// значения переменных поменялись бы местами (новое значение a равно старому значению b и наоборот).
+var a = 8, b = 5;
+var tmp = 8;
+a = b;
+b = tmp;
 
+console.log(a, b);
+
+// 14. Value exchange 2.0. Решить предыдущую задачу, не используя дополнительных переменных (и предполагая,
+// что значениями переменных могут быть произвольные целые числа).
 var a = 8, b = 5;
 console.log(a, b);
 
 [a, b] = [b, a];
 console.log(a, b);
-
