@@ -244,6 +244,149 @@
 //         alert(month + ' - это не зимний месяц');
 // }
 
+// 3.2.2 Группировка case
+
+// 'use strict';
+// var month = +prompt('Введите месяц в формате 1, 2...12', '1');
+// switch (month) {
+//     case 12:
+//     case 1:
+//     case 2:
+//         alert('Зимний месяц');
+//         break;
+//     case 3:
+//     case 4:
+//     case 5:
+//         alert('Весенний месяц');
+//         break;
+//     case 6:
+//     case 7:
+//     case 8:
+//         alert('Летний месяц');
+//         break;
+//     case 9:
+//     case 10:
+//     case 11:
+//         alert('Осенний месяц');
+//         break;
+// }
+
+// 3.3 Сравнение switch и if ... else
+
+// Когда лучше использовать последовательность if...else (или else...if), а когда — switch? При использовании else...if
+// можно проверять значения разных не связанных друг с другом переменных, причем сравнения могут быть любой степени сложности:
+
+// 'use strict';
+// if (SteamPressure * Factor > 56)
+// // statement
+// else if (Voltageln + VoltageOut < 23000)
+// // statement
+// else if (day == Thursday)
+// // statement
+// else
+// // statement
+
+// 4. Объект Math
+
+// 4.1 Свойства объекта Math
+
+// var a = Math.E; // 2.718281828459045
+// console.log(a);
+//
+// var a = Math.LN10; // 2.718281828459045
+// console.log(a);
+//
+// var a = Math.LN2; // 0.6931471805599453
+// console.log(a);
+//
+// var a = Math.LOG10E; // 0.4342944819032518
+// console.log(a);
+//
+// var a = Math.LOG2E; // 1.4426950408889634
+// console.log(a);
+//
+// var a = Math.PI; // 3.141592653589793
+// console.log(a);
+//
+// var a = Math.SQRT1_2; // 0.7071067811865476
+// console.log(a);
+//
+// var a = Math.SQRT2; // 1.4142135623730951
+// console.log(a);
+
+// 4.2 Методы объекта Math
+
+// var a = Math.cbrt(27); // 3 возвращает кубический корень числа
+// console.log(a);
+//
+// var a = Math.random(); // 3 возвращает кубический корень числа
+// console.log(a);
+
+// 5. Циклы(Loops)
+
+// В JavaScript(стандарт ES6) существует 5 типов циклов:
+// - do...while;
+// - while;
+// - for;
+// - for..in;
+// - for..of;
+
+// 5.1 The for Statement/Цикл for
+
+// В примере ниже, выводятся на экран квадраты целых чисел от 0 до 5:
+
+// 'use strict';
+// var i;
+// for (i = 0; i <= 5; i++)
+//     console.log(Math.pow(i, 2)); // 0 1 4 9 16 25
+
+// 5.1.1 Несколько инструкций в теле цикла
+
+// x *= y -> x = x * y // присваение с умножением
+
+// 'use strict';
+// var a = prompt('Введите значение a: ', '');
+// for (var i = a, fact = 1; i > 0; i--) {
+//     fact *= i;
+// }
+// alert(fact);
+
+// Любое выражение в for может быть пропущено:
+// 'use strict';
+// var a = prompt('Введите значение a: ', '');
+// var i = a, fact = 1;
+// for (; i > 0; i--) {
+//     fact *= i;
+// }
+// alert(fact);
+
+// Инкрементирующее же выражение может быть внесено в тело цикла:
+// 'use strict';
+// var a = prompt('Введите значение a: ', '');
+// var i = a, fact = 1;
+// for (; i > 0;) {
+//     fact *= i;
+//     i--;
+// }
+// alert(fact)
+
+// А можно и вообще убрать всё, получив бесконечный цикл.
+
+// 'use strict';
+// for (;;) {
+//     //statement
+// }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
