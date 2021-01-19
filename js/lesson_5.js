@@ -599,24 +599,29 @@
 //     if (i > 0) {
 //         a += '#';
 //     }
-//
 //     console.log(a);
 // }
 
-'use strict';
-var i;
-var a = '#';
-for (i = 0; i < 7; i++) {
-    if (a.length === 1) {
-        console.log(a);
-        a += '#';
-    } else {
-        a += '#';
-        console.log(a);
-    }
+// 'use strict';
+// var i;
+// var a = '#';
+// for (i = 0; i < 7; i++) {
+//     if (a.length === 1) {
+//         console.log(a);
+//         a += '#';
+//     } else {
+//         a += '#';
+//         console.log(a);
+//     }
+// }
+
+// 2.1..n
+// Напишите программу, которая выводит через console.log все числа от 1 до 100.
+
+var i = 1;
+for (i = 1; i <= 100; i ++) {
+    console.log(i);
 }
-
-
 
 
 
