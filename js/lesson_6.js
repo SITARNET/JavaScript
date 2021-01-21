@@ -166,9 +166,38 @@
 //
 // isEven(67);
 
+// 3. dayOfWeek
+// Создайте функцию, которая принимает в себя число x э [1; 7] и возвращает название дня недели. Используйте switch-case.
 
-
-
+// function dayOfWeek (x) {
+// var y = Number(x);
+// switch (y) {
+//     case 1:
+//         console.log('Понедельник');
+//         break;
+//     case 2:
+//         console.log('Вторник');
+//         break;
+//     case 3:
+//         console.log('Среда');
+//         break;
+//     case 4:
+//         console.log('Четверг');
+//         break;
+//     case 5:
+//         console.log('Пятница');
+//         break;
+//     case 6:
+//         console.log('Суббота');
+//         break;
+//     case 7:
+//         console.log('Воскресенье');
+//         break;
+//     default: console.log('Введите номер дня недели!');
+//     }
+// }
+//
+// dayOfWeek(3);
 
 
 

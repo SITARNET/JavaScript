@@ -768,34 +768,34 @@
 // 10. I don't know about indexOf method yet
 // Ниже приведен текст. В этом тексте найдите и выведите в консоль индекс всех вхождений таких фрагментов : of, in, new, from, this, rail splitter.
 
-function indMethod(){
-    var text = 'The nationalism of Hamilton was undemocratic. The democracy of Jefferson was, in the beginning, provincial. ' +
-        'The historic mission of uniting nationalism and democracy was in the course of time given to new leaders from a region beyond the mountains, ' +
-        'peopled by men and women from all sections and free from those state traditions which ran back to the early days of colonization. ' +
-        'The voice of the democratic nationalism nourished in the West was heard when Clay of Kentucky advocated his American system of protection ' +
-        'for industries; when Jackson of Tennessee condemned nullification in a ringing proclamation that has taken its place among the great American ' +
-        'state papers; and when Lincoln of Illinois, in a fateful hour, called upon a bewildered people to meet the supreme test whether this was a ' +
-        'nation destined to survive or to perish. And it will be remembered that Lincolns party chose for its banner that earlier device--Republican--which ' +
-        'Jefferson had made a sign of power. The \"rail splitter\" from Illinois united the nationalism of Hamilton with the democracy of Jefferson, ' +
-        'and his appeal was clothed in the simple language of the people, not in the sonorous rhetoric which Webster learned in the schools.';
-    var patterns = ['was', 'of','in','new','from','this','rail splitter'];
-
-    for (var i = 0; i < patterns.length; i++){
-        for (var j = 0; j < text.length; j++){
-            var temp = '';
-            for (var k = 0; k < patterns[i].length; k++){
-                if (patterns[i][k] === text[j + k]){
-                    temp += text[j+k];
-                    if (patterns[i] === temp) {
-                        console.log(patterns[i] + ' ' + j);
-                        break;
-                    }
-                }
-            }
-        }
-    }
-}
-indMethod();
+// function indMethod(){
+//     var text = 'The nationalism of Hamilton was undemocratic. The democracy of Jefferson was, in the beginning, provincial. ' +
+//         'The historic mission of uniting nationalism and democracy was in the course of time given to new leaders from a region beyond the mountains, ' +
+//         'peopled by men and women from all sections and free from those state traditions which ran back to the early days of colonization. ' +
+//         'The voice of the democratic nationalism nourished in the West was heard when Clay of Kentucky advocated his American system of protection ' +
+//         'for industries; when Jackson of Tennessee condemned nullification in a ringing proclamation that has taken its place among the great American ' +
+//         'state papers; and when Lincoln of Illinois, in a fateful hour, called upon a bewildered people to meet the supreme test whether this was a ' +
+//         'nation destined to survive or to perish. And it will be remembered that Lincolns party chose for its banner that earlier device--Republican--which ' +
+//         'Jefferson had made a sign of power. The \"rail splitter\" from Illinois united the nationalism of Hamilton with the democracy of Jefferson, ' +
+//         'and his appeal was clothed in the simple language of the people, not in the sonorous rhetoric which Webster learned in the schools.';
+//     var patterns = ['was', 'of','in','new','from','this','rail splitter'];
+//
+//     for (var i = 0; i < patterns.length; i++){
+//         for (var j = 0; j < text.length; j++){
+//             var temp = '';
+//             for (var k = 0; k < patterns[i].length; k++){
+//                 if (patterns[i][k] === text[j + k]){
+//                     temp += text[j+k];
+//                     if (patterns[i] === temp) {
+//                         console.log(patterns[i] + ' ' + j);
+//                         break;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+// indMethod();
 
 
 
