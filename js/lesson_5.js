@@ -736,13 +736,23 @@
 // var result = strArray.indexOf( "З" );
 // console.log(result);
 
+// 9. Z means Zaporozhye (sequel)
+// Выведите в консоль индексы всех букв "З" и "з" в фразе "Мы заехали с Захаром в Запорожье".
 
+var strArray = [..."Мы заехали с Захаром в Запорожье"];
+var strArrayNew = strArray.map(function (x) {
+    return x.toLowerCase();
+});
 
+function getAllIndexes(arr, val) {
+    var indexes = [], i = -1;
+    while ((i = arr.indexOf(val, (i+1))) != -1){
+        console.log(i);
+    }
+    return indexes;
+}
 
-
-
-
-
+var indexes = getAllIndexes(strArrayNew, "з");
 
 
 
