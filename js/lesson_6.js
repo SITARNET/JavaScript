@@ -199,6 +199,29 @@
 //
 // dayOfWeek(3);
 
+// 4. calcBox
+// Создайте функцию, которая принимает в себя 3 аргумента и рассчитывает объем коробки.
+
+// function boxVolume(x, y, z) {
+//     var boxVolume = x * y * z;
+//     console.log('Объём коробки: ' + boxVolume);
+// }
+//
+// boxVolume(3,3,3);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
