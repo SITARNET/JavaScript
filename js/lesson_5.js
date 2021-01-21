@@ -729,6 +729,12 @@
 //         console.log(i); // простое число
 //     }
 
+// 7. Z means Zaporozhye
+// Выведите в консоль индекс буквы "З" в фразе "Мы приехали в Запорожье".
+
+// var strArray = [..."Мы приехали в Запорожье"];
+// var result = strArray.indexOf( "З" );
+// console.log(result);
 
 
 
