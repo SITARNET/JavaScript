@@ -207,11 +207,11 @@
 // Создайте функцию, которая принимает в себя 3 аргумента и рассчитывает объем коробки.
 
 // function boxVolume(x, y, z) {
-//     var boxVolume = x * y * z;
-//     console.log('Объём коробки: ' + boxVolume);
+//     var vol = x * y * z;
+//     return vol;
 // }
 //
-// boxVolume(3,3,3);
+// console.log('Объём коробки: ' + boxVolume(3,3,3));
 
 // 5. hmsToSecs
 // Напишите функцию hmsToSecs, имеющую три аргумента h, m, s. Функция должна возвращать эквивалент переданного
@@ -219,14 +219,16 @@
 // ввод значения часов, минут и секунд и выводить результат работы функции на экран.
 
 function hmsToSec(h, m, s) {
-    var timeSec = 0;
-    // h = setInterval(() => parseInt(prompt('Введите часы: ', '24')), 5000);
-    // m = setInterval(() => parseInt(prompt('Введите минуты: ', '60')), 10000);
-    // s = setInterval(() => parseInt(prompt('Введите секунды: ', '60')), 15000);
+    //var timeSec = 0;
+    // h = setTimeout(() => parseInt(prompt('Введите часы: ', '')), 5000);
+    // m = setTimeout(() => parseInt(prompt('Введите минуты: ', '')), 10000);
+    // s = setTimeout(() => parseInt(prompt('Введите секунды: ', '')), 15000);
+    // console.log(h, m, s);
     if (0 <= h <= 24) {
         if (0 <= m <= 60) {
             if (0 <= s <= 60) {
-                timeSec = s * m * h;
+                var timeSec = s * m * h;
+                console.log(timeSec);
             } else {
                 console.log('Введите колличество секунд от 0 до 60!')
             }
@@ -238,8 +240,18 @@ function hmsToSec(h, m, s) {
     }
     return timeSec;
 }
+// var htemp;
+// var mtemp;
+// var stemp;
+// console.log('Время в секундах: ' + hmsToSec(10,50,61) + ' сек.');
+// setTimeout(hmsToSec(parseInt(prompt('Введите часы: ', '10')),parseInt(prompt('Введите минуты: ', '10')),parseInt(prompt('Введите секунды: ', '10'))), 5000);
+setTimeout(htemp = (() => prompt('Введите часы: ', 10))(), 100);
+setTimeout(mtemp = (() => prompt('Введите минуты: ', 10))(), 1000);
+setTimeout(stemp = (() => prompt('Введите секунды: ', 10))(), 2000);
+setTimeout(hmsToSec, 5000, htemp, mtemp, stemp);
+// hmsToSec(htemp, mtemp, stemp);
 
-console.log('Время в секундах: ' + hmsToSec(10,50,61) + ' сек.');
+//console.log(hmsToSec());
 
 
 
