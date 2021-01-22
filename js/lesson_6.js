@@ -142,14 +142,16 @@
 // Теперь мы можем написать такую функцию сами. Напишите функцию min, принимающую два аргумента, и возвращающую минимальный из них.
 
 // function minArg(x, y) {
+//     var result = 0;
 //     if (x > y) {
-//         console.log('x > y');
+//         result = y;
 //     } else {
-//         console.log('x < y');
+//         result = x;
 //     }
+//     return result;
 // }
 //
-// minArg(-30,20);
+// console.log(minArg(-30,20));
 
 // 2. Even number
 // Создайте функцию isEven, которая возвращает значение true или false в зависимости от того является ли аргумент x четным.
@@ -157,47 +159,49 @@
 // function isEven(x) {
 //     if (x % 2 === 0) {
 //         x = true;
-//         console.log(x);
+//
 //     } else {
 //         x = false;
-//         console.log(x);
 //     }
+//     return x;
 // }
 //
-// isEven(67);
+// console.log(isEven(68));
 
 // 3. dayOfWeek
 // Создайте функцию, которая принимает в себя число x э [1; 7] и возвращает название дня недели. Используйте switch-case.
 
 // function dayOfWeek (x) {
 // var y = Number(x);
+// var day = '';
 // switch (y) {
 //     case 1:
-//         console.log('Понедельник');
+//         day = 'Понедельник';
 //         break;
 //     case 2:
-//         console.log('Вторник');
+//         day = 'Вторник';
 //         break;
 //     case 3:
-//         console.log('Среда');
+//         day = 'Среда';
 //         break;
 //     case 4:
-//         console.log('Четверг');
+//         day = 'Четверг';
 //         break;
 //     case 5:
-//         console.log('Пятница');
+//         day = 'Пятница';
 //         break;
 //     case 6:
-//         console.log('Суббота');
+//         day = 'Суббота';
 //         break;
 //     case 7:
-//         console.log('Воскресенье');
+//         day = 'Воскресенье';
 //         break;
 //     default: console.log('Введите номер дня недели!');
 //     }
+//     return day;
 // }
 //
-// dayOfWeek(3);
+// console.log(dayOfWeek(3));
 
 // 4. calcBox
 // Создайте функцию, которая принимает в себя 3 аргумента и рассчитывает объем коробки.
@@ -215,17 +219,14 @@
 // ввод значения часов, минут и секунд и выводить результат работы функции на экран.
 
 function hmsToSec(h, m, s) {
-    //h = setInterval(() => parseInt(prompt('Введите часы: ', '24')), 5000);
-    //m = setInterval(() => parseInt(prompt('Введите минуты: ', '60')), 10000);
-    //s = setInterval(() => parseInt(prompt('Введите секунды: ', '60')), 15000);
-    if (h >= 0 || h <= 24) {
-        console.log(h);
-        if (m >= 0 || m <= 60) {
-            console.log(m);
-            if (s >= 0 || s <= 60) {
-                console.log(s);
-                var timeSec = s * m * h;
-                console.log('Время в секундах: ' + timeSec + ' сек.')
+    var timeSec = 0;
+    // h = setInterval(() => parseInt(prompt('Введите часы: ', '24')), 5000);
+    // m = setInterval(() => parseInt(prompt('Введите минуты: ', '60')), 10000);
+    // s = setInterval(() => parseInt(prompt('Введите секунды: ', '60')), 15000);
+    if (0 <= h <= 24) {
+        if (0 <= m <= 60) {
+            if (0 <= s <= 60) {
+                timeSec = s * m * h;
             } else {
                 console.log('Введите колличество секунд от 0 до 60!')
             }
@@ -235,9 +236,10 @@ function hmsToSec(h, m, s) {
     } else {
         console.log('Введите колличество часов от 0 до 24!')
     }
+    return timeSec;
 }
 
-hmsToSec(12,45,10);
+console.log('Время в секундах: ' + hmsToSec(10,50,61) + ' сек.');
 
 
 
