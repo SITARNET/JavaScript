@@ -249,9 +249,8 @@
 // Напишите программу, которая будет вызывать данную функцию не менее 10 раз.
 // (Задача на использование глобальных переменных)
 
-// var calledTimes = 0;
-// var myFunction = function()
-// {
+// let calledTimes = 0;
+// var myFunction = () => {
 //     if (calledTimes < 10) {
 //         calledTimes++;
 //         console.log("I have been called " + calledTimes + " times");
@@ -260,14 +259,30 @@
 //     }
 // }
 //
-// var setIntervalId = setInterval(myFunction, 1000);
+// var setIntervalId = setInterval(myFunction, 500);
 
+// 7. primeNumber
+// Напишите функцию, которая которая принимает в себя натуральное число n и возвращает самое большое простое число в диапазоне (2; n).
 
-
-
-
-
-
+// function greatSimpleNumber (n) {
+//     let primes = [];
+//     for (var i = 2; i <= n; i++) {
+//         let isPrime = true;
+//         for (var j = 2; j < i; j++) {
+//             if (i % j == 0)  {
+//                 isPrime = false;
+//                 break;
+//             }
+//         }
+//         if (isPrime) {
+//             primes.push(i);
+//         }
+//     }
+//     return primes.pop();
+// }
+//
+// let result = greatSimpleNumber(10);
+// console.log("Max Prime Number: " + result);
 
 
 
