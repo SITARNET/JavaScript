@@ -218,50 +218,49 @@
 // ей временного значения в секундах. Создайте программу, которая будет циклически запрашивать у пользователя
 // ввод значения часов, минут и секунд и выводить результат работы функции на экран.
 
-function hmsToSec(h, m, s) {
-    //var timeSec = 0;
-    // h = setTimeout(() => parseInt(prompt('Введите часы: ', '')), 5000);
-    // m = setTimeout(() => parseInt(prompt('Введите минуты: ', '')), 10000);
-    // s = setTimeout(() => parseInt(prompt('Введите секунды: ', '')), 15000);
-    // console.log(h, m, s);
-    if (0 <= h <= 24) {
-        if (0 <= m <= 60) {
-            if (0 <= s <= 60) {
-                var timeSec = s * m * h;
-                console.log(timeSec);
-            } else {
-                console.log('Введите колличество секунд от 0 до 60!')
-            }
-        } else {
-            console.log('Введите колличество минут от 0 до 60!')
-        }
-    } else {
-        console.log('Введите колличество часов от 0 до 24!')
-    }
-    return timeSec;
-}
-// var htemp;
-// var mtemp;
-// var stemp;
-// console.log('Время в секундах: ' + hmsToSec(10,50,61) + ' сек.');
-// setTimeout(hmsToSec(parseInt(prompt('Введите часы: ', '10')),parseInt(prompt('Введите минуты: ', '10')),parseInt(prompt('Введите секунды: ', '10'))), 5000);
-setTimeout(htemp = (() => prompt('Введите часы: ', 10))(), 100);
-setTimeout(mtemp = (() => prompt('Введите минуты: ', 10))(), 1000);
-setTimeout(stemp = (() => prompt('Введите секунды: ', 10))(), 2000);
-setTimeout(hmsToSec, 5000, htemp, mtemp, stemp);
-// hmsToSec(htemp, mtemp, stemp);
+// function hmsToSec(h, m, s) {
+//     if (0 <= h <= 24) {
+//         if (0 <= m <= 60) {
+//             if (0 <= s <= 60) {
+//                 var timeSec = s * m * h;
+//                 console.log(timeSec);
+//             } else {
+//                 console.log('Введите колличество секунд от 0 до 60!')
+//             }
+//         } else {
+//             console.log('Введите колличество минут от 0 до 60!')
+//         }
+//     } else {
+//         console.log('Введите колличество часов от 0 до 24!')
+//     }
+//     return timeSec;
+// }
+//
+// setInterval(function hmstime() {
+//     ht = prompt('Введите часы: ', 10);
+//     mt = prompt('Введите минуты: ', 10);
+//     st = prompt('Введите секунды: ', 10);
+//
+//     hmsToSec(ht, mt, st);
+// }, 5000);
 
-//console.log(hmsToSec());
+// 6. callCounter
+// Напишите функцию, которая при каждом вызове будет выводить на экран количество раз, которое она вызывалась ранее.
+// Напишите программу, которая будет вызывать данную функцию не менее 10 раз.
+// (Задача на использование глобальных переменных)
 
-
-
-
-
-
-
-
-
-
+// var calledTimes = 0;
+// var myFunction = function()
+// {
+//     if (calledTimes < 10) {
+//         calledTimes++;
+//         console.log("I have been called " + calledTimes + " times");
+//     } else {
+//         clearInterval(setIntervalId);
+//     }
+// }
+//
+// var setIntervalId = setInterval(myFunction, 1000);
 
 
 
