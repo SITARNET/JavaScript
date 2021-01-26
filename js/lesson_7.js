@@ -88,10 +88,9 @@
 // console.log(count);
 
 // 2. Выведите в консоль каждый HTML-элемент страницы. (тот же перебор через цикл for..in)
-// child
 
-var list = document.getElementsByTagName('body');
-
+// var list = document.querySelectorAll('*');
+//
 // console.log(list);
 // for (var key in list){
 //     console.log(list[key]);
@@ -99,12 +98,14 @@ var list = document.getElementsByTagName('body');
 
 // 3. Выведите в консоль тип каждого элемента страницы. (console.log(typeof...));
 
-// var list = document.querySelectorAll('*');
+// var list = document.getElementsByTagName('*');
 // function showTypes(list){
 //     for(var key in list){
 //         console.log(typeof list[key]);
 //     }
 // }
+//
+// showTypes(list);
 
 // 4. Создайте пустую строку, и в нее в столбик конкатенируйте название HTML-элемента. (list[key].nodeName - вернет вам название тега)
 
@@ -132,7 +133,7 @@ var list = document.getElementsByTagName('body');
 //         if (list[key].nodeName === 'DIV') div++;
 //         if (list[key].nodeName === 'A') a++;
 //         if (list[key].nodeName === 'P') p++;
-//         // console.log(list[key].nodeName);
+//          // console.log(list[key].nodeName);list
 //     }
 //     console.log('Count of span is - ' + span);
 //     console.log('Count of div is - ' + div);
@@ -142,7 +143,36 @@ var list = document.getElementsByTagName('body');
 // }
 // console.log(checkElementType(list));
 
+// 2. idCard
+// Создайте объект с информацией о себе: имя, фамилия, дата рождения, количество копеек в кармане.
+// Переберите циклом все свойства и выведите их в консоль в виде:
 
+// 'use strict';
+// 0 name Дима
+// 1 fname Учкин
+// 2 coins 0
+// 3 дата рождения 05.10.1982
+// ...
+// Удалите свойство о содержании кармане.
+
+// var myInfo = {
+//     name : 'Николай',
+//     fname : 'Ситар',
+//     coins : 0,
+//     ['Дата рождения'] : '06.03.1985'
+// }
+//
+// for (var key in myInfo){
+//     console.log(key + ' ' + myInfo[key]);
+// }
+//
+// delete myInfo.coins;
+//
+// // console.log(myInfo);
+//
+// for (var key in myInfo){
+//     console.log(key + ' ' + myInfo[key]);
+// }
 
 
 
