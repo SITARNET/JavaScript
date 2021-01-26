@@ -114,6 +114,43 @@
 // // Увеличить все элементы массива на 1
 // data.forEach(function(v, i, a) { a[i] = v + 1; });
 
+// 8.2.2 Метод map()
+// Метод map() создаёт новый массив с результатом вызова указанной функции для каждого элемента массива.
+
+// var numbers = [1, 4, 9];
+// var roots = numbers.map(Math.sqrt);
+// теперь roots равен [1, 2, 3], а numbers всё ещё равен [1, 4, 9]
+
+// Функция map просто преобразует один массив в другой массив.
+
+// var friends = [
+//     {id:1, name: 'Dave',age:50},
+//     {id:2,name: 'Kellie',age:42},
+//     {id:3,name: 'Max',age:12},
+//     {id:2,name: 'Jack',age:12}
+// ];
+// var friendsNamesList = friends.map(function(element) {
+//     return element.name;
+// });
+//
+// ["Dave", "Kellie", "Max", "Jack"]  // ["Dave", "Kellie", "Max", "Jack"]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
