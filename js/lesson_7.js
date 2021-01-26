@@ -88,14 +88,14 @@
 // console.log(count);
 
 // 2. Выведите в консоль каждый HTML-элемент страницы. (тот же перебор через цикл for..in)
+// child
 
-var list = document.querySelectorAll('*');
-// var count = 0;
+var list = document.getElementsByTagName('body');
+
+// console.log(list);
 // for (var key in list){
-//     console.dir(   );
+//     console.log(list[key]);
 // }
-
-console.log(Object.getOwnPropertyNames(list));
 
 // 3. Выведите в консоль тип каждого элемента страницы. (console.log(typeof...));
 
@@ -121,7 +121,26 @@ console.log(Object.getOwnPropertyNames(list));
 
 // Внимание! При переборе list через цикл for..in у вас будет 5 лишних полей, это методы с типом "function" вам нужно делать проверку при переборе(typeof list[key]) если тип поля будет "function" его не учитывать.
 
-
+// var list = document.querySelectorAll('body *');
+// function checkElementType(list){
+//     var div = 0, span = 0, p = 0, a = 0;
+//     var str = '';
+//     for(var key in list){
+//         if (typeof list[key] === 'object')
+//             str = str + list[key].nodeName+'\n';
+//         if (list[key].nodeName === 'SPAN') span++;
+//         if (list[key].nodeName === 'DIV') div++;
+//         if (list[key].nodeName === 'A') a++;
+//         if (list[key].nodeName === 'P') p++;
+//         // console.log(list[key].nodeName);
+//     }
+//     console.log('Count of span is - ' + span);
+//     console.log('Count of div is - ' + div);
+//     console.log('Count of a is - ' + a);
+//     console.log('Count of p is - ' + p);
+//     return str;
+// }
+// console.log(checkElementType(list));
 
 
 
