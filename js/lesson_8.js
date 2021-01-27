@@ -490,24 +490,35 @@
 // 2. hasElement(element, arr)
 // Напишите функцию hasElement(element, arr), которая принимает 2 аргумента и возвращает true если element есть среди элементов массива и false в ином случае.
 
-function hasElement(element, arr) {
-    for (var i = 0; arr.length > i; i++) { // перебераем от 0 до 5
-        if (arr[i] === element) { // если 4 = значению id:3 = 4
-            console.log('Element in - ' + i); // id = 3 (0,1,2,3)
-            var flag = true; // ставим флаг true
-        }
+// function hasElement(element, arr) {
+//     for (var i = 0; arr.length > i; i++) { // перебераем от 0 до 5
+//         if (arr[i] === element) { // если 4 = значению id:3 = 4
+//             console.log('Element in - ' + i); // id = 3 (0,1,2,3)
+//             var flag = true; // ставим флаг true
+//         }
+//     }
+//     if (!flag) { // если флаг не true
+//         console.log('Dont has this element!');
+//     }
+// }
+//
+// hasElement(4, [1, 2, 3, 4, 5, 6]); // вызываем функцию с аргументами, и что ищем в каком массиве
+
+// 3. indexOfElement(element, arr)
+// Напишите функцию indexOfElement(element, arr), которая принимает 2 аргумента и возвращает индекс вхождения element-а в массив arr
+// и -1 в случае отсутствия element-а в массиве.
+
+function indexOfElement(element, arr) {
+    var arrIndex = arr.indexOf(element);
+    if (arrIndex === -1) {
+        console.log('Element ' + element + ' with ' + arrIndex + ' index not found!');
+    } else {
+        console.log('Element ' + element + ' is present in ' + arrIndex + ' index!');
     }
-    if (!flag) { // если флаг не true
-        console.log('Dont has this element!');
-    }
+    return arrIndex;
 }
 
-hasElement(4, [1, 2, 3, 4, 5, 6]); // вызываем функцию с аргументами, и что ищем в каком массиве
-
-
-
-
-
+indexOfElement(4, [1,2,3,4,5,6]);
 
 
 
