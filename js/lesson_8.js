@@ -511,25 +511,45 @@
 // Напишите функцию indexOfElement(element, arr), которая принимает 2 аргумента и возвращает индекс вхождения element-а в массив arr
 // и -1 в случае отсутствия element-а в массиве.
 
-function indexOfElement(element, arr) {
-    var result = false;
-    for (var i = 0; arr.length > i; i++) {
-        //console.log(arr[i]);
-        if (arr[i] === element) {
-            console.log('Index:' + i);
-            result = true;
-            break;
-        }
+function indexOfElement(element, arr)
+{
+    for (var i = 0; arr.length > i; i++)
+    {
+        if (arr[i] === element)
+            return i;
     }
-    if (!result) {
-        i = -1;
-        console.log('Not found! Index: ' + i);
-    }
-    return i;
+    return -1;
 }
 
-// indexOfElement(4, [1,2,3,4,5,6]);
-console.log(indexOfElement(4, [1,2,3,4,5,6]));
+console.log(indexOfElement(4,[1,2,3,4,5,6]));
+
+// var result = indexOfElement(8, [1,2,3,4,5,6]);
+//     if (result === -1) {
+//         console.log('Not found!')
+//     }
+//     else {
+//         console.log('Index: ' + result);
+//     }
+
+// function indexOfElement(element, arr) {
+//     var result = false;
+//     for (var i = 0; arr.length > i; i++) {
+//         //console.log(arr[i]);
+//         if (arr[i] === element) {
+//             console.log('Index:' + i);
+//             result = true;
+//             break;
+//         }
+//     }
+//     if (!result) {
+//         i = -1;
+//         console.log('Not found! Index: ' + i);
+//     }
+//     return i;
+// }
+//
+// // indexOfElement(4, [1,2,3,4,5,6]);
+// console.log(indexOfElement(4, [1,2,3,4,5,6]));
 
 // function indexOfElement(element, arr) {
 //     var arrIndex = arr.indexOf(element);
@@ -542,6 +562,28 @@ console.log(indexOfElement(4, [1,2,3,4,5,6]));
 // }
 //
 // indexOfElement(4, [1,2,3,4,5,6]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
