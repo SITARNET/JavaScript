@@ -480,18 +480,29 @@
 // 1. compareFunctionNumber(a, b)
 // Напишите функцию compareFunctionNumber(a, b), которая принимает 2 аргумента и возвращает true если первый больше второго и false в ином случае. Приводить к числу оба аргумента внутри функции.
 
-function compareFunctionNumber(a, b) {
-    var atemp = Number(a), btemp = Number(b);
-    return (atemp > btemp) ? true : false;
+// function compareFunctionNumber(a, b) {
+//     var atemp = Number(a), btemp = Number(b);
+//     return (atemp > btemp) ? true : false;
+// }
+//
+// console.log(compareFunctionNumber(11, 10));
+
+// 2. hasElement(element, arr)
+// Напишите функцию hasElement(element, arr), которая принимает 2 аргумента и возвращает true если element есть среди элементов массива и false в ином случае.
+
+function hasElement(element, arr) {
+    for (var i = 0; arr.length > i; i++) { // перебераем от 0 до 5
+        if (arr[i] === element) { // если 4 = значению id:3 = 4
+            console.log('Element in - ' + i); // id = 3 (0,1,2,3)
+            var flag = true; // ставим флаг true
+        }
+    }
+    if (!flag) { // если флаг не true
+        console.log('Dont has this element!');
+    }
 }
 
-console.log(compareFunctionNumber(11, 10));
-
-
-
-
-
-
+hasElement(4, [1, 2, 3, 4, 5, 6]); // вызываем функцию с аргументами, и что ищем в каком массиве
 
 
 
