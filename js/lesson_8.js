@@ -477,6 +477,16 @@
 // [].copyWithin.call(new Int32Array([1, 2, 3, 4, 5]), 0, 3, 4);
 // // Int32Array [4, 2, 3, 4, 5]
 
+// 1. compareFunctionNumber(a, b)
+// Напишите функцию compareFunctionNumber(a, b), которая принимает 2 аргумента и возвращает true если первый больше второго и false в ином случае. Приводить к числу оба аргумента внутри функции.
+
+function compareFunctionNumber(a, b) {
+    var atemp = Number(a), btemp = Number(b);
+    return (atemp > btemp) ? true : false;
+}
+
+console.log(compareFunctionNumber(11, 10));
+
 
 
 
