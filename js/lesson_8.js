@@ -616,15 +616,32 @@
 
 // Обратите внимание: строка 'Function', 'function', 'functiOn' должны обрабатываться одинаково (опускаем значения аргумента type в нижний регистр).
 
-function compareFunctionType(a, type) {
-    var typeLowerCase = type.toLowerCase();
-    if (typeof a === typeLowerCase) return true;
-    else return false;
+// function compareFunctionType(a, type) {
+//     var typeLowerCase = type.toLowerCase();
+//     if (typeof a === typeLowerCase) return true;
+//     else return false;
+// }
+//
+// console.log(compareFunctionType(true, 'boolean'));
+
+// 6. bubbleSort(arr)
+// Напишите функцию bubbleSort(arr), которая сортирует массив в порядке возрастания, и использует алгоритм сортировки пузырьком.
+
+function bubbleSort(arr) {
+    var n = arr.length - 1;
+    for (var i = 0; i < n; i++) {
+        for (var j = 0, s = n - i; j < s; j++) {
+            if (arr[j] > arr[j + 1]) {
+                var t = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = t;
+            }
+        }
+    }
+    return arr;
 }
 
-console.log(compareFunctionType(123, 'string'));
-
-
+console.log(bubbleSort([1,3,2,6,4,8]));
 
 
 
