@@ -665,32 +665,55 @@
 // 8*. selectionSort(arr)
 // Напишите функцию selectionSort(arr), которая работает аналогично функции bubbleSort, но использует алгоритм сортировки выбором.
 
-function selectionSort(arr) {
-    var n = arr.length - 1;
-    for (var i = 0; i < n; i++) {
-        var low = i;
-        for (var j = i + 1; j < n; j++) {
-            if (arr[j] < arr[low]) {
-                low = j;
-            }
-        }
-        if (arr[i] > arr[low]) {
-            var tmp = arr[i];
-            arr[i] = arr[low];
-            arr[low] = tmp;
+// function selectionSort(arr) {
+//     var n = arr.length - 1;
+//     for (var i = 0; i < n; i++) {
+//         var low = i;
+//         for (var j = i + 1; j < n; j++) {
+//             if (arr[j] < arr[low]) {
+//                 low = j;
+//             }
+//         }
+//         if (arr[i] > arr[low]) {
+//             var tmp = arr[i];
+//             arr[i] = arr[low];
+//             arr[low] = tmp;
+//         }
+//     }
+//     return arr;
+// }
+//
+// console.log(selectionSort([1,3,2,6,4,8]));
+
+// 9*. quickSort(arr)
+// Напишите функцию quickSort(arr), которая работает аналогично функции bubbleSort, но использует алгоритм быстрой сортировки.
+
+function quickSort(arr) {
+    // var arrLength = arr.length;
+    var low = Math.min.apply(Math, arr), high = Math.max.apply(Math, arr);
+    var i = (low - 1); // index наименьшего элемента
+    var pivot = arr[high]; // поворот
+
+    for (var j = low; j < high; j++) {
+        if (arr[j] < pivot) {
+            i++;
+
+            // замена
+            var temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
         }
     }
-    return arr;
+
+    // замена
+    var temp1 = arr[i + 1];
+    arr[i + 1] = arr[high];
+    arr[high] = temp1;
+
+    return i + 1;
 }
 
-console.log(selectionSort([1,3,2,6,4,8]));
-
-
-
-
-
-
-
+console.log(quickSort([2,6,3,8,6,1,9]));
 
 
 
