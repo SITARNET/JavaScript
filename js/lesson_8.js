@@ -646,21 +646,59 @@
 // 7. insertionSort(arr)
 // Напишите функцию insertionSort(arr), которая работает аналогично функции bubbleSort, но использует алгоритм сортировки вставкой.
 
-function insertionSort(arr) {
+// function insertionSort(arr) {
+//     var n = arr.length - 1;
+//     for (var i = 1; i < n; i++) {
+//         var key = arr[i];
+//         var j = i - 1;
+//         while (j >= 0 && arr[j] > key) {
+//             arr[j + 1] = arr[j];
+//             j = j - 1;
+//         }
+//         arr[j + 1] = key;
+//     }
+//     return arr;
+// }
+//
+// console.log(insertionSort([1,3,2,6,4,8]));
+
+// 8*. selectionSort(arr)
+// Напишите функцию selectionSort(arr), которая работает аналогично функции bubbleSort, но использует алгоритм сортировки выбором.
+
+function selectionSort(arr) {
     var n = arr.length - 1;
-    for (var i = 1; i < n; i++) {
-        var key = arr[i];
-        var j = i - 1;
-        while (j >= 0 && arr[j] > key) {
-            arr[j + 1] = arr[j];
-            j = j - 1;
+    for (var i = 0; i < n; i++) {
+        var low = i;
+        for (var j = i + 1; j < n; j++) {
+            if (arr[j] < arr[low]) {
+                low = j;
+            }
         }
-        arr[j + 1] = key;
+        if (arr[i] > arr[low]) {
+            var tmp = arr[i];
+            arr[i] = arr[low];
+            arr[low] = tmp;
+        }
     }
     return arr;
 }
 
-console.log(insertionSort([1,3,2,6,4,8]));
+console.log(selectionSort([1,3,2,6,4,8]));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
