@@ -584,21 +584,45 @@
 // Напишите функцию compareFunctionString(a, b), которая сравнивает строки, принимает 2 аргумента и возвращает true
 // если первый больше второго и false в ином случае. Если тип одного из аргументов не строка, возвращать false.
 
-function compareFunctionString(a, b){
-    var atemp = a.length, btemp = b.length;
-    if (typeof a !== 'string' || typeof b !== 'string') return false;
-    else {
-        if (atemp > btemp) return true;
-        else return false;
-    }
+// function compareFunctionString(a, b){
+//     var atemp = a.length, btemp = b.length;
+//     if (typeof a !== 'string' || typeof b !== 'string') return false;
+//     else {
+//         if (atemp > btemp) return true;
+//         else return false;
+//     }
+// }
+//
+// console.log(compareFunctionString('Roman', 'Nikolay'));
+
+// 7. compareFunctionType(a, type)
+// Напишите функцию compareFunctionType(a, type), которая принимает 2 аргумента (первый - значение, второй - строка c типом или подтипом данных)
+// и возвращает true если первый принадлежит к указанному типу, false в ином случае.
+
+    // Список типов и подтипов, которые должна обрабатывать функция:
+    // - Undefined
+    // - Null
+    // - Number
+    // - NaN
+    // - Symbol
+    // - Infinity
+    // - String
+    // - Boolean
+    // - Object
+    // - Array
+    // - Map
+    // - Set
+    // - Function
+
+// Обратите внимание: строка 'Function', 'function', 'functiOn' должны обрабатываться одинаково (опускаем значения аргумента type в нижний регистр).
+
+function compareFunctionType(a, type) {
+    var typeLowerCase = type.toLowerCase();
+    if (typeof a === typeLowerCase) return true;
+    else return false;
 }
 
-console.log(compareFunctionString('Roman', 'Nikolay'));
-
-
-
-
-
+console.log(compareFunctionType(123, 'string'));
 
 
 
