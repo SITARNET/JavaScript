@@ -566,25 +566,34 @@
 // 4. binarySearch(element, arr)
 // Напишите функцию binarySearch(element, arr), которая работает аналогично функции indexOfElement, но использует алгоритм бинарного поиска.
 
-function binarySearch(element, arr){
-    var from = 0, // начало
-        to = arr.length - 1; // конец (длина)
-    while ( to >= from){ // пока условие (true) конец больше или равно началу, делаем {...}
-        var i = Math.floor((from + to) / 2); // в i возвращаем округлённое в меньшую сторону число от (0+5)/2=2.5 ~ 2
-        if (element === arr[i]) return i // если 4 = 2, пропускаем
-        else if (element < arr[i]) {to=i-1} // в другом случаи если 4<2, пропускаем
-        else if (element > arr[i]) {from = i+1}  // в другом случаи если 4>2 тогда конец 2+1=3
+// function binarySearch(element, arr){
+//     var from = 0, // начало
+//         to = arr.length - 1; // конец (длина)
+//     while ( to >= from){ // пока условие (true) конец больше или равно началу, делаем {...}
+//         var i = Math.floor((from + to) / 2); // в i возвращаем округлённое в меньшую сторону число от (0+5)/2=2.5 ~ 2
+//         if (element === arr[i]) return i // если 4 = 2, пропускаем
+//         else if (element < arr[i]) {to=i-1} // в другом случаи если 4<2, пропускаем
+//         else if (element > arr[i]) {from = i+1}  // в другом случаи если 4>2 тогда конец 2+1=3
+//     }
+//     return -1; // возвращаем если начало меньше или равно концу, то есть числа не найдено в массиве.
+// }
+//
+// console.log(binarySearch(7,[1,2,7,8]));
+
+// 5. compareFunctionString
+// Напишите функцию compareFunctionString(a, b), которая сравнивает строки, принимает 2 аргумента и возвращает true
+// если первый больше второго и false в ином случае. Если тип одного из аргументов не строка, возвращать false.
+
+function compareFunctionString(a, b){
+    var atemp = a.length, btemp = b.length;
+    if (typeof a !== 'string' || typeof b !== 'string') return false;
+    else {
+        if (atemp > btemp) return true;
+        else return false;
     }
-    return -1; // возвращаем если начало меньше или равно концу, то есть числа не найдено в массиве.
 }
 
-console.log(binarySearch(7,[1,2,7,8]));
-
-
-
-
-
-
+console.log(compareFunctionString('Roman', 'Nikolay'));
 
 
 
