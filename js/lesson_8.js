@@ -627,27 +627,40 @@
 // 6. bubbleSort(arr)
 // Напишите функцию bubbleSort(arr), которая сортирует массив в порядке возрастания, и использует алгоритм сортировки пузырьком.
 
-function bubbleSort(arr) {
+// function bubbleSort(arr) {
+//     var n = arr.length - 1;
+//     for (var i = 0; i < n; i++) {
+//         for (var j = 0, s = n - i; j < s; j++) {
+//             if (arr[j] > arr[j + 1]) {
+//                 var t = arr[j];
+//                 arr[j] = arr[j + 1];
+//                 arr[j + 1] = t;
+//             }
+//         }
+//     }
+//     return arr;
+// }
+//
+// console.log(bubbleSort([1,3,2,6,4,8]));
+
+// 7. insertionSort(arr)
+// Напишите функцию insertionSort(arr), которая работает аналогично функции bubbleSort, но использует алгоритм сортировки вставкой.
+
+function insertionSort(arr) {
     var n = arr.length - 1;
-    for (var i = 0; i < n; i++) {
-        for (var j = 0, s = n - i; j < s; j++) {
-            if (arr[j] > arr[j + 1]) {
-                var t = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = t;
-            }
+    for (var i = 1; i < n; i++) {
+        var key = arr[i];
+        var j = i - 1;
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j = j - 1;
         }
+        arr[j + 1] = key;
     }
     return arr;
 }
 
-console.log(bubbleSort([1,3,2,6,4,8]));
-
-
-
-
-
-
+console.log(insertionSort([1,3,2,6,4,8]));
 
 
 
