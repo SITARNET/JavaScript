@@ -588,8 +588,7 @@
 //     var atemp = a.length, btemp = b.length;
 //     if (typeof a !== 'string' || typeof b !== 'string') return false;
 //     else {
-//         if (atemp > btemp) return true;
-//         else return false;
+//         return (atemp > btemp) ? true : false;
 //     }
 // }
 //
@@ -618,8 +617,7 @@
 
 // function compareFunctionType(a, type) {
 //     var typeLowerCase = type.toLowerCase();
-//     if (typeof a === typeLowerCase) return true;
-//     else return false;
+//     return (typeof a === typeLowerCase) ? true : false;
 // }
 //
 // console.log(compareFunctionType(true, 'boolean'));
@@ -688,32 +686,32 @@
 // 9*. quickSort(arr)
 // Напишите функцию quickSort(arr), которая работает аналогично функции bubbleSort, но использует алгоритм быстрой сортировки.
 
-function quickSort(arr) {
-    // var arrLength = arr.length;
-    var low = Math.min.apply(Math, arr), high = Math.max.apply(Math, arr);
-    var i = (low - 1); // index наименьшего элемента
-    var pivot = arr[high]; // поворот
-
-    for (var j = low; j < high; j++) {
-        if (arr[j] < pivot) {
-            i++;
-
-            // замена
-            var temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
-        }
-    }
-
-    // замена
-    var temp1 = arr[i + 1];
-    arr[i + 1] = arr[high];
-    arr[high] = temp1;
-
-    return i + 1;
-}
-
-console.log(quickSort([2,6,3,8,6,1,9]));
+// function quickSort(arr) {
+//     // var arrLength = arr.length;
+//     var low = Math.min.apply(Math, arr), high = Math.max.apply(Math, arr);
+//     var i = (low - 1); // index наименьшего элемента
+//     var pivot = arr[high]; // поворот
+//
+//     for (var j = low; j < high; j++) {
+//         if (arr[j] < pivot) {
+//             i++;
+//
+//             // замена
+//             var temp = arr[i];
+//             arr[i] = arr[j];
+//             arr[j] = temp;
+//         }
+//     }
+//
+//     // замена
+//     var temp1 = arr[i + 1];
+//     arr[i + 1] = arr[high];
+//     arr[high] = temp1;
+//
+//     return i + 1;
+// }
+//
+// console.log(quickSort([2,6,3,8,6,1,9]));
 
 
 
