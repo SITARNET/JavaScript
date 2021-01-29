@@ -588,7 +588,7 @@
 //     var atemp = a.length, btemp = b.length;
 //     if (typeof a !== 'string' || typeof b !== 'string') return false;
 //     else {
-//         return (atemp > btemp) ? true : false;
+//         return atemp > btemp;
 //     }
 // }
 //
@@ -617,7 +617,7 @@
 
 // function compareFunctionType(a, type) {
 //     var typeLowerCase = type.toLowerCase();
-//     return (typeof a === typeLowerCase) ? true : false;
+//     return typeof a === typeLowerCase;
 // }
 //
 // console.log(compareFunctionType(true, 'boolean'));
@@ -686,11 +686,15 @@
 // 9*. quickSort(arr)
 // Напишите функцию quickSort(arr), которая работает аналогично функции bubbleSort, но использует алгоритм быстрой сортировки.
 
-// function quickSort(arr) {
-//     // var arrLength = arr.length;
-//     var low = Math.min.apply(Math, arr), high = Math.max.apply(Math, arr);
-//     var i = (low - 1); // index наименьшего элемента
+// function partition(arr, low, high) {
+//     // if (arr.length < 2) {
+//     //     return arr;
+//     // }
+//     // var low = Math.min.apply(Math, arr), high = Math.max.apply(Math, arr);
+//     var i = low - 1; // index наименьшего элемента
 //     var pivot = arr[high]; // поворот
+//     // var n = arr.length;
+//     // var pivot = Math.floor(Math.random() * arr.length);
 //
 //     for (var j = low; j < high; j++) {
 //         if (arr[j] < pivot) {
@@ -711,13 +715,47 @@
 //     return i + 1;
 // }
 //
-// console.log(quickSort([2,6,3,8,6,1,9]));
+// function quickSort(arr, low, high){
+//     if (low < high) {
+//         var pi = partition(arr, low, high);
+//         quickSort(arr, low, pi - 1);
+//         quickSort(arr, pi + 1, high);
+//     }
+// }
+//
+// var arr = [2,6,3,8,6,1,9];
+// var n = arr.length - 1;
+// console.log(quickSort(arr, 0, n));
 
 
 
+// 10. singleExemplar
+// Напишите функцию singleExemplar(a), которая принимает 1 аргумент (массив, реализовать безопасность типов)
+// и возвращает новый массив, где все элементы уникальны в пространстве массива.
 
+// singleExemplar(a) { .. }
+// var myArray = [null, 1, 2, 2, 3, [1, 2], NaN, 'str', '1', {1}, null, NaN, 1, 3];
+// singleExemplar(singleExemplar); // [null, 1, 2, 3, [1, 2], NaN, 'str', '1', {1}]
 
+// Помните: NaN не равен ничему включая себя.
 
+function singleExemplar(a) {
+    var tmp = [];
+    a : for (var i = 0; i < a.length; i++){
+        //var flag = 1;
+        for (var j = 0; j < tmp.length; j++){
+            if (a[i] === tmp[j] || ( a[i] !== a[i] && tmp[j] !== tmp[j] ) ){
+                continue a;
+            }
+        }
+        tmp.push(a[i]);
+    }
+    return tmp;
+}
+
+var myArray = [null, 1, 2, 2, 3, [1, 2], NaN, 'str', '1', {a:1}, null, NaN, 1, 3];
+
+console.log(singleExemplar(myArray));
 
 
 
