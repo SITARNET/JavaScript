@@ -799,10 +799,31 @@
 
 // 6.1 Создайте массив arrList из элементов объекта list.
 
-var list = document.querySelectorAll('*');
-var arr = Array.from(list); // создаём массив из елементов объекта.
+// var list = document.querySelectorAll('*');
+// var arr = Array.from(list); // создаём массив из елементов объекта.
+//
+// console.log(arr);
 
-console.log(arr);
+// 6.2 Создайте строку из названий всех тегов html-элементов - nodeName, используя Array.prototype.join().
+
+var list = document.querySelectorAll('*');
+
+// function checkNodeName(list) {
+//     var str = '';
+//     for (var key in list) {
+//         if (typeof list[key] === 'object') {
+//             str = str + list[key].nodeName + ' ';
+//         }
+//     }
+//     return str;
+// }
+//
+// console.log(checkNodeName(list));
+
+var htmlTags = list.join(', ');
+console.log(htmlTags);
+
+
 
 
 
