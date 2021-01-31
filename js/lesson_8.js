@@ -793,9 +793,30 @@
 // 6. nodeList
 // var list = document.querySelectorAll('*'); - магическая строка создаст переменную list и запишет в нее объект со всеми тегами страницы.
 
-var list = document.querySelectorAll('*');
+// var list = document.querySelectorAll('*');
+//
+// console.log(list);
 
-console.log(list);
+// 6.1 Создайте массив arrList из элементов объекта list.
+
+var list = document.querySelectorAll('*');
+var arr = Array.from(list); // создаём массив из елементов объекта.
+
+console.log(arr);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
