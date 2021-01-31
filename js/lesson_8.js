@@ -741,26 +741,23 @@
 
 // сравнить по типу и длине
 
-function singleExemplar(a) {
-    var tmp = [];
-    a : for (var i = 0; i < a.length; i++){
-        //var flag = 1;
-        for (var j = 0; j < tmp.length; j++){
-            if (a[i] === tmp[j] ||
-                ( a[i] !== a[i] && tmp[j] !== tmp[j]) ||
-                ((typeof a[i] !== typeof a[i]) && (typeof tmp[j] !== typeof tmp[j])) ||
-                a.length !== a.length && tmp.length !== tmp.length) {
-                continue a;
-            }
-        }
-        tmp.push(a[i]);
-    }
-    return tmp;
-}
-
-var myArray = [null, 1, 2, 2, 3, [1, 2], NaN, 'str', '1', {a:1}, null, NaN, 1, 3, 2, null];
-
-console.log(singleExemplar(myArray));
+// function singleExemplar(a) {
+//     var tmp = [];
+//     a : for (var i = 0; i < a.length; i++){
+//         //var flag = 1;
+//         for (var j = 0; j < tmp.length; j++){
+//             if (a[i] === tmp[j] || ( a[i] !== a[i] && tmp[j] !== tmp[j])) {
+//                 continue a;
+//             }
+//         }
+//         tmp.push(a[i]);
+//     }
+//     return tmp;
+// }
+//
+// var myArray = [null, 1, 2, 2, 3, [1, 2], NaN, 'str', '1', {a:1}, null, NaN, 1, 3, 2, null];
+//
+// console.log(singleExemplar(myArray));
 
 // 11. singleExemplarStrict
 // Напишите функцию singleExemplarStrict(a), которая принимает 1 аргумент (массив, реализовать безопасность типов) и возвращает новый массив, где все элементы уникальны в пространстве массива.
@@ -772,29 +769,33 @@ console.log(singleExemplar(myArray));
 // singleExemplar и singleExemplarStrict работают с примитивами работают аналогично. Но singleExemplarStrict считает массивы одинаковими если: 1 - их длины одинаковые,
 // 2 - под одинаковыми индексами стоят одинаковые значения. В контексте функции singleExemplarStrict объекты одинаковые если: 1 - у них одинаковое количество ключей
 
-// function exNaN(a, b){
-//     return (a!==a && b!==b) ? true : false;
-// }
+// function singleExemplarStrict(a) {
 //
-// function singleExemplarStrict(a, b){
-//     var temp = [];
-//     if (a.length !== b.length) return false;
-//     for (var i = 0; i < b.length ; i++){
-//         if (a[i] !== b[i] && !exNaN(a[i],b[i])) return false;
+//     var tmp = [];
+//     a : for (var i = 0; i < a.length; i++) {
+//         for (var j = 0; j < tmp.length; j++) {
+//             if (a[i] === tmp[j] || (a[i] !== a[i] && tmp[j] !== tmp[j]) || a.length === tmp.length)
+//                 // (a !== a) || ((typeof a[i] !== typeof a[i]) && (typeof tmp[j] !== typeof tmp[j])) || a.length !== a.length && tmp.length !== tmp.length) {
+//             {
+//                 continue a;
+//             }
+//         }
+//         tmp.push(a[i]);
 //     }
-//     return true;
+//     return tmp;
+//
 // }
 //
-// var a = [null, 1, 2, 2, 3, [1, 2], [1, 2, 3], [1, 2, 4], [1, 2, 3]];
-// var b = [null, 1, 2, 2, 3, [1, 2], [1, 2, 3], [1, 2, 4], [1, 2, 3]];
+// var a = [null, 1, 2, 4, 2, 3, [1, 2], [1, 2, 3], null, 4, [1, 2, 4], [1, 2, 3]];
 //
-// console.log(singleExemplarStrict(a,b));
+// console.log(singleExemplarStrict(a));
 
 // 6. nodeList
 // var list = document.querySelectorAll('*'); - магическая строка создаст переменную list и запишет в нее объект со всеми тегами страницы.
 
+var list = document.querySelectorAll('*');
 
-
+console.log(list);
 
 
 
