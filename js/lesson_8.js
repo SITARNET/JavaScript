@@ -801,10 +801,15 @@
 
 var list = document.querySelectorAll('*');
 
-var arrList = [];
-for (var key = 0; key < list.length; key++){
-    var arr = arrList.push(list[key].tagName);
-}
+// var arrList = [];
+// for (var key = 0; key < list.length; key++){
+//     var arr = arrList.push(list[key].tagName);
+// }
+
+
+// var arrList = Array.prototype.slice.call(list);
+
+var arrList = Array.from(list);
 
 console.log(arrList); // (25)["HTML", "HEAD", "META", "TITLE", "LINK"..........
 console.log(typeof arrList); // Object !!!!!!!!!!!!!!!!!!
