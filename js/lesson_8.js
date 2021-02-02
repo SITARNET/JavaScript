@@ -810,6 +810,27 @@
 
 // 6.2 Создайте строку из названий всех тегов html-элементов - nodeName, используя Array.prototype.join().
 
+// var list = document.querySelectorAll('*');
+//
+// var arrList = [];
+// for (var key = 0; key < list.length; key++){
+//     arrList[key] = list[key].nodeName;
+// }
+//
+// var arrList = arrList.join(', ');
+// console.log(arrList);
+
+// 6.4 Отсортируйте массив arrList от функций, используя sort().
+// Для корректной работы метода sort() всем элементам масива arrList нужно изменить свойство:
+
+// Example
+// var arrList = [{x : 1}, {x : 3}, {x : 4}, {x : 2}];
+// arrList.forEach((e) => {
+//     e.toString = function() {
+//         return this;
+//     };
+// });
+
 var list = document.querySelectorAll('*');
 
 var arrList = [];
@@ -817,26 +838,13 @@ for (var key = 0; key < list.length; key++){
     arrList[key] = list[key].nodeName;
 }
 
-var arr = arrList.join(', ');
-console.log(arr);
+arrList.forEach((e) => {
+    e.toString = function () {
+        return this;
+    };
+});
 
-// var arrList = Array.from(list);
-// var str = arrList.join(', ');
-// console.log(str);
-
-// function checkNodeName(list) {
-//     var str = '';
-//     for (var key in list) {
-//         if (typeof list[key] === 'object') {
-//             str = str + list[key].nodeName + ' ';
-//         }
-//     }
-//     return str;
-// }
-//
-// console.log(checkNodeName(list));
-
-
+console.log(arrList.sort());
 
 
 
