@@ -807,6 +807,8 @@
 // }
 //
 // console.log(arrList);
+//
+// console.log(Array.isArray(arrList)); // array
 
 // 6.2 Создайте строку из названий всех тегов html-элементов - nodeName, используя Array.prototype.join().
 
@@ -819,6 +821,8 @@
 //
 // var arrList = arrList.join(', ');
 // console.log(arrList);
+//
+// console.log(Array.isArray(arrList)); // string
 
 // 6.4 Отсортируйте массив arrList от функций, используя sort().
 // Для корректной работы метода sort() всем элементам масива arrList нужно изменить свойство:
@@ -831,22 +835,22 @@
 //     };
 // });
 
-var list = document.querySelectorAll('*');
-
-var arrList = [];
-for (var key = 0; key < list.length; key++){
-    arrList[key] = list[key].nodeName;
-}
-
-arrList.forEach((e) => {
-    e.toString = function () {
-        return this;
-    };
-});
-
-console.log(arrList.sort());
-
-
+// var list = document.querySelectorAll('*');
+//
+// var arrList = [];
+// for (var key = 0; key < list.length; key++){
+//     arrList[key] = list[key].nodeName;
+// }
+//
+// arrList.forEach((e) => {
+//     e.toString = function () {
+//         return this;
+//     };
+// });
+//
+// console.log(arrList.sort());
+//
+// console.log(Array.isArray(arrList)); // array
 
 
 
