@@ -872,20 +872,25 @@
 
 // 6.7 Заданние №6 используя Array.reverse().
 
+// var list = document.querySelectorAll('*');
+// var arrList = [];
+// for (var key = 0; key < list.length; key++){
+//     arrList[key] = list[key].nodeName;
+// }
+//
+// console.log(arrList);
+//
+// var arrListReverse = arrList.reverse();
+// console.log(arrListReverse);
+
+// 6.9 Создайте массив arrListPlusChildren из элементов массива arrList и их потомков.
+
 var list = document.querySelectorAll('*');
 var arrList = [];
 for (var key = 0; key < list.length; key++){
-    arrList[key] = list[key].nodeName;
+    arrList[key] = list[key].childNodes;
+    console.log(arrList[key]);
 }
-
-console.log(arrList);
-
-var arrListReverse = arrList.reverse();
-console.log(arrListReverse);
-
-
-
-
 
 
 
