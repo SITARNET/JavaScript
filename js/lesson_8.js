@@ -911,7 +911,7 @@ var list = document.querySelectorAll('*');
 
 var arrList = [];
 for (var key = 0; key < list.length; key++){
-    arrList[key] = list[key].nodeName;
+    arrList[key] = list[key];
 }
 
 console.log(arrList);
@@ -919,3 +919,20 @@ console.log(arrList);
 var value = arrList.map(function(name) {
     return console.log(name);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
