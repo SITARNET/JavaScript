@@ -885,18 +885,24 @@
 
 // 6.9 Создайте массив arrListPlusChildren из элементов массива arrList и их потомков.
 
+// var list = document.querySelectorAll('*');
+// var arrList = [];
+// for (var key = 0; key < list.length; key++){
+//     arrList[key] = list[key].childNodes;
+//     console.log(arrList[key]);
+// }
+
+// 6.10 Создайте массив из 100 элементов массива arrList используя slice().
+
 var list = document.querySelectorAll('*');
 var arrList = [];
 for (var key = 0; key < list.length; key++){
-    arrList[key] = list[key].childNodes;
-    console.log(arrList[key]);
+    arrList[key] = list[key].nodeName;
 }
 
+console.log(arrList);
 
-
-
-
-
-
+var arrListNew = arrList.slice(1, 11); // в массиве нету больше 100 элементов. Взял 10
+console.log(arrListNew);
 
 
