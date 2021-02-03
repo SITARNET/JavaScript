@@ -836,7 +836,6 @@
 // });
 
 // var list = document.querySelectorAll('*');
-//
 // var arrList = [];
 // for (var key = 0; key < list.length; key++){
 //     arrList[key] = list[key].nodeName;
@@ -848,12 +847,30 @@
 //     };
 // });
 //
-// console.log(arrList.sort());
-//
-// console.log(Array.isArray(arrList)); // array
+// let sortedList = arrList.sort();
+// console.log(sortedList);
 
+// 6.6 Отсортируйте элементы массива массив arrList по названию тега в обратном от задания №5 порядке (не используя Array.reverse()), результат сохранить в arrListReverse.
 
+var list = document.querySelectorAll('*');
+var arrList = [];
+for (var key = 0; key < list.length; key++){
+    arrList[key] = list[key].nodeName;
+}
 
+// var sortedList = arrList.reverse();
+// console.log(sortedList);
+
+console.log(arrList);
+
+var temp;
+for (var i = 0, j = arrList.length - 1; i < j; i++, j--) {
+    temp = arrList[j];
+    arrList[j] = arrList[i];
+    arrList[i] = temp;
+}
+
+console.log(arrList);
 
 
 
