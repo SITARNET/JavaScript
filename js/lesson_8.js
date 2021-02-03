@@ -922,6 +922,21 @@
 
 // 6.12 Создайте массив из nodeName элементов arrList не используя циклов.
 
+// var list = document.querySelectorAll('*');
+//
+// var arrList = [];
+// for (var key = 0; key < list.length; key++){
+//     arrList[key] = list[key].nodeName;
+// }
+//
+// console.log(arrList);
+//
+// var value = arrList.map(function(name) {
+//     return console.log(name);
+// });
+
+// 6.13 Создайте массив из withoutSpan c элементов arrList не используя циклов, откинув все span элементы.
+
 var list = document.querySelectorAll('*');
 
 var arrList = [];
@@ -931,12 +946,11 @@ for (var key = 0; key < list.length; key++){
 
 console.log(arrList);
 
-var value = arrList.map(function(name) {
-    return console.log(name);
+var value = arrList.filter(function(name) {
+    if (name !== 'SPAN') {
+        return console.log(name);
+    }
 });
-
-
-
 
 
 
