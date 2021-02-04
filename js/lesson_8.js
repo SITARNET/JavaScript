@@ -937,20 +937,53 @@
 
 // 6.13 Создайте массив из withoutSpan c элементов arrList не используя циклов, откинув все span элементы.
 
-var list = document.querySelectorAll('*');
+// var list = document.querySelectorAll('*');
+//
+// var arrList = [];
+// for (var key = 0; key < list.length; key++){
+//     arrList[key] = list[key].nodeName;
+// }
+//
+// console.log(arrList);
+//
+// var value = arrList.filter(function(name) {
+//     if (name !== 'SPAN') {
+//         return console.log(name);
+//     }
+// });
 
-var arrList = [];
-for (var key = 0; key < list.length; key++){
-    arrList[key] = list[key].nodeName;
+// 6.14 Напишите функцию createWithoutElements(arr, str), arr - массив элементов, str - строка с названием элементов,
+// которые нужно отсеять в процессе работы функции. Функция возвращает новый массив.
+
+var arr = ['A', 'P', 'DIV', 'SPAN', 'LI', 'UL', 'HTML', 'SCRIPT'], str = 'SpaN, A, Li';
+
+function createWithoutElements(arr, str) {
+    var upperCaseArr = str.toUpperCase().split(', '); // SPAN, A, LI
+    var arrSort = arr.filter(n => !upperCaseArr.includes(n));
+    var arrNew = arrSort.concat();
+    return arrNew;
 }
 
-console.log(arrList);
+console.log(createWithoutElements(arr, str));
 
-var value = arrList.filter(function(name) {
-    if (name !== 'SPAN') {
-        return console.log(name);
-    }
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
