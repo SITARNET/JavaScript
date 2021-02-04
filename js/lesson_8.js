@@ -955,18 +955,48 @@
 // 6.14 Напишите функцию createWithoutElements(arr, str), arr - массив элементов, str - строка с названием элементов,
 // которые нужно отсеять в процессе работы функции. Функция возвращает новый массив.
 
-var arr = ['A', 'P', 'DIV', 'SPAN', 'LI', 'UL', 'HTML', 'SCRIPT'], str = 'SpaN, A, Li';
+// var arr = ['A', 'P', 'DIV', 'SPAN', 'LI', 'UL', 'HTML', 'SCRIPT'], str = 'SpaN, A, Li';
+//
+// function createWithoutElements(arr, str) {
+//     var upperCaseArr = str.toUpperCase().split(', '); // SPAN, A, LI
+//     var arrSort = arr.filter(n => !upperCaseArr.includes(n));
+//     var arrNew = arrSort.concat();
+//     return arrNew;
+// }
+//
+// console.log(createWithoutElements(arr, str));
+
+// 6.14 Напишите функцию createWithoutElements(arr, str), arr - массив элементов, str - строка с названием элементов,
+// которые нужно отсеять в процессе работы функции. Функция возвращает новый массив. Object
+
+var arr = [
+    {x : 1, nodeName : 'SPAN'},
+    {x : 2, nodeName : 'DIV'},
+    {x : 3, nodeName : 'SPAN'},
+    {x : 4, nodeName : 'P'},
+    {x : 5, nodeName : 'SPAN'},
+    {x : 6, nodeName : 'DIV'}
+];
 
 function createWithoutElements(arr, str) {
-    var upperCaseArr = str.toUpperCase().split(', '); // SPAN, A, LI
-    var arrSort = arr.filter(n => !upperCaseArr.includes(n));
-    var arrNew = arrSort.concat();
-    return arrNew;
+    var strUpperCase = str.toUpperCase(); // SPAN, A, LI
+
+    var arrSort = [];
+    for (var i = 0; i < arr.length; i++) {
+        // console.log(arr[i]);
+        for (var j in arr[i]) {
+            // console.log(arr[i][j]);
+            if (arr[i][j] === strUpperCase) {
+                console.log(strUpperCase);
+                arrSort = arr.concat(delete arr[i]);
+                // console.log(arrSort);
+            }
+        }
+    }
+    return arrSort;
 }
 
-console.log(createWithoutElements(arr, str));
-
-
+console.log(createWithoutElements(arr, 'div'));
 
 
 
