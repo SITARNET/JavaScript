@@ -969,43 +969,90 @@
 // 6.14 Напишите функцию createWithoutElements(arr, str), arr - массив элементов, str - строка с названием элементов,
 // которые нужно отсеять в процессе работы функции. Функция возвращает новый массив. Object
 
-var arr = [
-    {x : 1, nodeName : 'SPAN'},
-    {x : 2, nodeName : 'DIV'},
-    {x : 3, nodeName : 'SPAN'},
-    {x : 4, nodeName : 'P'},
-    {x : 5, nodeName : 'SPAN'},
-    {x : 6, nodeName : 'DIV'}
-];
+// var arr = [
+//     {x : 1, nodeName : 'SPAN'},
+//     {x : 2, nodeName : 'DIV'},
+//     {x : 3, nodeName : 'SPAN'},
+//     {x : 4, nodeName : 'P'},
+//     {x : 5, nodeName : 'SPAN'},
+//     {x : 6, nodeName : 'DIV'}
+// ];
+//
+// function createWithoutElements(arr, str) {
+//     var strUpperCase = str.toUpperCase(); // SPAN, A, LI
+//
+//     var arrSort = [];
+//     for (var i = 0; i < arr.length; i++) {
+//         // console.log(arr[i]);
+//         for (var j in arr[i]) {
+//             // console.log(arr[i][j]);
+//             if (arr[i][j] === strUpperCase) {
+//                 console.log(strUpperCase);
+//                 arrSort = arr.concat(delete arr[i]);
+//                 // console.log(arrSort);
+//             }
+//         }
+//     }
+//     return arrSort;
+// }
+//
+// console.log(createWithoutElements(arr, 'div'));
 
-function createWithoutElements(arr, str) {
-    var strUpperCase = str.toUpperCase(); // SPAN, A, LI
+// 7. Напишите функцию createRectangle(m, n), Функция возвращает пустой прямоугольный массив m на n. m - количество столбиков,
+// n - количество рядов. n и m генерировать рандомно ( 2 < n < 12, 4 < m < 6).
 
-    var arrSort = [];
-    for (var i = 0; i < arr.length; i++) {
-        // console.log(arr[i]);
-        for (var j in arr[i]) {
-            // console.log(arr[i][j]);
-            if (arr[i][j] === strUpperCase) {
-                console.log(strUpperCase);
-                arrSort = arr.concat(delete arr[i]);
-                // console.log(arrSort);
-            }
+// Напишите функцию createLetter(). Функция возвращает объект - письмо.
+// Письмо:
+// - адресат (destination) - создайте массив people, где каждый элемент объект person и случайным образом получайте это поле.
+// - адресант (addressee) - также из массива people.
+// - время создания (creationTime) - случайное число 0 - new Date().getTime();
+// - тема (subject) - создайте функцию генерирующую тему из случайного количества слов (1 - 4) каждое слово размером 2 - 8 символов.
+// - сообщение (message) - создайте функцию генерирующую message, можно использовать функцию из задания №10 в уроке 6.2.
+
+// Example letter
+// {
+//     destination : {
+//         firstName : 'Igor',
+//         lastName : 'Igorov',
+//         address : 'avenue Pupkina, 14b'
+//     },
+//     addressee : {
+//         firstName : 'Ivan',
+//         lastName : 'Ivanov',
+//         address : 'Vesuvius vol., 3 palm trees to the right from bar "White coconut"'
+//     },
+//     creationTime : 900000,
+//     subject : 'Lorem ipsum dolor.',
+//     message : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. \
+//                 Excepturi quidem culpa corporis laudantium, \
+//                 magnam, eos numquam animi quam.'
+// }
+// Положите на случайные позиции массива созданого функциией createRectangle, случайное количество писем из случайным содержимым.
+// Подсчитайте количество писем в массиве.
+// Наклейте на каждое письмо марку с картинкой, картинки найти в google. (Добавляем поле stamp из ссылкой на картинку).
+
+function createRectangle() {
+    // var m = Math.floor(Math.random() * (6 - 4)) + 4;
+    // var n = Math.floor(Math.random() * (12 - 2)) + 2;
+    // var rectangle = m * n;
+
+    // var rectangle = [
+    //     {n : 1, m : 1, letter : createLetter()},
+    //     {n : 1, m : 2},
+    //     {n : 2, m : 1, letter : createLetter()},
+    //     {n : 2, m : 2},
+    // ];
+
+    var cell = {};
+    var rectangle = [];
+    for (var n = 0; 2 < n < 12; n++) {
+        for (var m = 0; 4 < m < 6; m++) {
+
         }
     }
-    return arrSort;
 }
 
-console.log(createWithoutElements(arr, 'div'));
-
-
-
-
-
-
-
-
-
+console.log(createRectangle());
 
 
 
