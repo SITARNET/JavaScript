@@ -1051,7 +1051,7 @@ function randomInt(min, max) {
 
 function randomSubject(min, max) {
     let result = '';
-    maxWord = randomInt(1, max);
+    let maxWord = randomInt(1, max);
     for ( let i = min; i <= maxWord; i++) {
         result = result + randomWord(randomInt(2, 8)) + ' ';
         // console.log(i);
@@ -1066,7 +1066,14 @@ function createMessage() {
     return message;
 }
 
-console.log(createMessage());
+// console.log(createMessage());
+
+function creationTime() {
+    let time = new Date().toString();
+    return time;
+}
+
+console.log(creationTime());
 
 // var letter = [
 //     {m : 4, n : 2},
