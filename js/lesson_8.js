@@ -1031,7 +1031,38 @@
 // Подсчитайте количество писем в массиве.
 // Наклейте на каждое письмо марку с картинкой, картинки найти в google. (Добавляем поле stamp из ссылкой на картинку).
 
+function randomWord(length) {
+    var result           = '';
+    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    var charactersLength = characters.length;
+    for ( var i = 1; i <= length; i++ ) {
+        result = result + characters.charAt(Math.floor(Math.random() * charactersLength)); // возвращает указанный символ из строки +
+    }
+    return result;
+}
+
+function randomInt(min, max) {
+    min = Math.ceil(min); // округляет до ближайшего большего
+    max = Math.floor(max); //  округляет до ближайшего меньшего
+    return Math.floor(Math.random() * (max - min + 1)) + min; //Максимум и минимум включаются
+}
+
+console.log(randomWord(randomInt(2, 8)));
+
+
+// var letter = [
+//     {m : 4, n : 2},
+//     {m : 5, n : 6},
+//     {m : 4, n : 10},
+//     {m : 4, n : 9},
+//     {m : 5, n : 7},
+//     {m : 4, n : 3}
+// ]
+
 function createRectangle() {
+
+
+
     // var m = Math.floor(Math.random() * (6 - 4)) + 4;
     // var n = Math.floor(Math.random() * (12 - 2)) + 2;
     // var rectangle = m * n;
@@ -1043,13 +1074,15 @@ function createRectangle() {
     //     {n : 2, m : 2},
     // ];
 
-    var cell = {};
-    var rectangle = [];
-    for (var n = 0; 2 < n < 12; n++) {
-        for (var m = 0; 4 < m < 6; m++) {
-
-        }
-    }
+//     var cell = {};
+//     var rectangle = [];
+//     for (var n = 2; n < 12; n++) {
+//         for (var m = 4; m < 6; m++) {
+//             console.log('n = ' + n);
+//             console.log('m = ' + m);
+//             return cell = {'n' : n, 'm' : m};
+//         }
+//     }
 }
 
 console.log(createRectangle());
