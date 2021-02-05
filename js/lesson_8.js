@@ -1031,6 +1031,42 @@
 // Подсчитайте количество писем в массиве.
 // Наклейте на каждое письмо марку с картинкой, картинки найти в google. (Добавляем поле stamp из ссылкой на картинку).
 
+var people = {
+    person1: {
+        firstName: 'Igor', lastName: 'Igorov', address: 'avenue Pupkina, 14b'
+    },
+    person2: {
+        firstName: 'Roman', lastName: 'Romanov', address: 'avenue Pupkina, 15b'
+    },
+    person3: {
+        firstName: 'Denis', lastName: 'Denisov', address: 'avenue Pupkina, 16b'
+    }
+};
+
+function getPerson() {
+    
+}
+
+console.log(people);
+
+var letter = {
+    destination : {
+        firstName : 'Igor',
+        lastName : 'Igorov',
+        address : 'avenue Pupkina, 14b'
+    },
+    addressee : {
+        firstName : 'Ivan',
+        lastName : 'Ivanov',
+        address : 'Vesuvius vol., 3 palm trees to the right from bar "White coconut"'
+    },
+    creationTime : creationTime(),
+    subject : randomSubject(1, 4),
+    message : createMessage()
+};
+
+console.log(letter);
+
 function randomWord(length) {
     let result = '';
     let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
@@ -1073,16 +1109,7 @@ function creationTime() {
     return time;
 }
 
-console.log(creationTime());
-
-// var letter = [
-//     {m : 4, n : 2},
-//     {m : 5, n : 6},
-//     {m : 4, n : 10},
-//     {m : 4, n : 9},
-//     {m : 5, n : 7},
-//     {m : 4, n : 3}
-// ]
+// console.log(creationTime());
 
 function createRectangle() {
 
