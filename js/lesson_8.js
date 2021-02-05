@@ -1032,10 +1032,10 @@
 // Наклейте на каждое письмо марку с картинкой, картинки найти в google. (Добавляем поле stamp из ссылкой на картинку).
 
 function randomWord(length) {
-    var result           = '';
-    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-    var charactersLength = characters.length;
-    for ( var i = 1; i <= length; i++ ) {
+    let result = '';
+    let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    let charactersLength = characters.length;
+    for ( let i = 1; i <= length; i++ ) {
         result = result + characters.charAt(Math.floor(Math.random() * charactersLength)); // возвращает указанный символ из строки +
     }
     return result;
@@ -1047,8 +1047,19 @@ function randomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min; //Максимум и минимум включаются
 }
 
-console.log(randomWord(randomInt(2, 8)));
+// console.log(randomWord(randomInt(2, 8)));
 
+function randomSubject(min, max) {
+    let result = '';
+    maxWord = randomInt(1, max);
+    for ( let i = min; i <= maxWord; i++) {
+        result = result + randomWord(randomInt(2, 8)) + ' ';
+        // console.log(i);
+    }
+    return result;
+}
+
+console.log(randomSubject(1, 4));
 
 // var letter = [
 //     {m : 4, n : 2},
