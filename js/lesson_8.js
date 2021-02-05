@@ -1059,7 +1059,14 @@ function randomSubject(min, max) {
     return result;
 }
 
-console.log(randomSubject(1, 4));
+// console.log(randomSubject(1, 4));
+
+function createMessage() {
+    let message = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi quidem culpa corporis laudantium, magnam, eos numquam animi quam.';
+    return message;
+}
+
+console.log(createMessage());
 
 // var letter = [
 //     {m : 4, n : 2},
