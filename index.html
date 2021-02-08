@@ -6,23 +6,31 @@
     <link rel="stylesheet" href="css/style.css" type="text/css"/>
 </head>
 <body>
-<p class="black">Hello world!</p>
-    <h1 class="greetings">Java Script tasks</h1>
-    <ul>
-        <li><a>Пункт 1</a>
-            <ul>
-                <li><p>Подпункт 1.1</p></li>
-                <li><span>Подпункт 1.2</span></li>
-            </ul>
-        </li>
-        <li><a>Пункт 2</a>
-            <ul>
-                <li><p>Подпункт 2.1</p></li>
-                <li><span>Подпункт 2.2</span></li>
-            </ul>
-        </li>
-    </ul>
-<div>Please help!</div>
-<script src="js/lesson_8.js"></script>
+
+<!--<div style="padding-bottom: 40px;">Please help!</div>-->
+<!--<div onclick="alert('Обработчик!')">-->
+<!--    <em>Если вы кликните на <code>EM</code>, сработает обработчик на <code>DIV</code></em>-->
+<!--</div>-->
+<!--<style>-->
+<!--    body * {-->
+<!--        margin: 10px;-->
+<!--        border: 1px solid blue;-->
+<!--    }-->
+<!--</style>-->
+
+<!--<form onclick="alert('form')">FORM-->
+<!--    <div onclick="alert('div')">DIV-->
+<!--        <p onclick="alert('p')">P</p>-->
+<!--    </div>-->
+<!--</form>-->
+
+
+Клик покажет оба: и <code>event.target</code>, и <code>this</code> для сравнения:
+
+<form id="form">FORM
+    <div>DIV<p>P</p></div>
+</form>
+
+<script src="js/lesson_9.js"></script>
 </body>
 </html>
