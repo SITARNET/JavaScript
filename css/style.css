@@ -136,15 +136,27 @@
 /*    cursor: pointer;*/
 /*}*/
 
-.tree span:hover {
-    font-weight: bold;
-}
+/*.tree span:hover {*/
+/*    font-weight: bold;*/
+/*}*/
 
-.tree span {
+/*.tree span {*/
+/*    cursor: pointer;*/
+/*}*/
+
+table {
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid black;
+    padding: 4px;
+}
+th {
     cursor: pointer;
 }
-
-
+th:hover {
+    background: yellow;
+}
 
 
 
