@@ -413,22 +413,46 @@
 // Во-вторых, делегирование создаёт дополнительную нагрузку на браузер, ведь обработчик запускается, когда событие происходит в любом месте контейнера,
 // не обязательно на элементах, которые нам интересны. Но обычно эта нагрузка настолько пустяковая, что её даже не стоит принимать во внимание.
 
+// Task 1
 // Спрячьте сообщения с помощью делегирования
-
 // Дан список сообщений с кнопками для удаления [x]. Заставьте кнопки работать.
 
 // P.S. Используйте делегирование событий. Должен быть лишь один обработчик на элементе-контейнере для всего.
 
-// Task 1
 
-container.onclick = function(event) { // вешаем на id="container" событие .onclick
-    if (event.target.className != 'remove-button') return; // если элемент (цель) не имеет нужный атрибут 'remove-button', возвращаем
+// container.onclick = function(event) { // вешаем на id="container" событие .onclick
+//     if (event.target.className != 'remove-button') return; // если элемент (цель) не имеет нужный атрибут 'remove-button', возвращаем
+//
+//     let pane = event.target.closest('.pane'); // ищем ближайший родительский элемент класса 'pane'
+//     pane.remove(); // удаляем класс 'pane'
+// };
 
-    let pane = event.target.closest('.pane'); // ищем ближайший родительский элемент класса 'pane'
-    pane.remove(); // удаляем класс 'pane'
-};
+// Task 2
+// Раскрывающееся дерево
 
+// Создайте дерево, которое по клику на заголовок скрывает-показывает потомков:
 
+// поместить все текстовые узлы в элемент <span>
+// он занимает только то место, которое необходимо для текста
+
+for (let li of tree.querySelectorAll('li')) {
+    let span = document.createElement('span'); // создаём елемент span в li
+    li.prepend(span); // вставляем в начало
+    span.append(span.nextSibling); // поместить текстовый узел внутрь элемента <span>
+}
+
+//  ловим клики на всём дереве
+tree.onclick = function(event) {
+
+    if (event.target.tagName != 'SPAN') {
+        return;
+    }
+
+    let childrenContainer = event.target.parentNode.querySelector('ul');
+    if (!childrenContainer) return; // нет детей
+
+    childrenContainer.hidden = !childrenContainer.hidden;
+}
 
 
 
