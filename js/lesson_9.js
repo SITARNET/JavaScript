@@ -374,14 +374,14 @@
 // Поведение: «Переключатель» (Toggle)
 // Ещё один пример поведения. Сделаем так, что при клике на элемент с атрибутом data-toggle-id будет скрываться/показываться элемент с заданным id:
 
-document.addEventListener('click', function(event) {
-    let id = event.target.dataset.toggleId;
-    if (!id) return;
-
-    let elem = document.getElementById(id);
-
-    elem.hidden = !elem.hidden;
-});
+// document.addEventListener('click', function(event) {
+//     let id = event.target.dataset.toggleId;
+//     if (!id) return;
+//
+//     let elem = document.getElementById(id);
+//
+//     elem.hidden = !elem.hidden;
+// });
 
 // Ещё раз подчеркнём, что мы сделали. Теперь для того, чтобы добавить скрытие-раскрытие любому элементу, даже не надо знать JavaScript, можно просто написать атрибут data-toggle-id.
 
@@ -413,10 +413,20 @@ document.addEventListener('click', function(event) {
 // Во-вторых, делегирование создаёт дополнительную нагрузку на браузер, ведь обработчик запускается, когда событие происходит в любом месте контейнера,
 // не обязательно на элементах, которые нам интересны. Но обычно эта нагрузка настолько пустяковая, что её даже не стоит принимать во внимание.
 
+// Спрячьте сообщения с помощью делегирования
 
+// Дан список сообщений с кнопками для удаления [x]. Заставьте кнопки работать.
 
+// P.S. Используйте делегирование событий. Должен быть лишь один обработчик на элементе-контейнере для всего.
 
+// Task 1
 
+container.onclick = function(event) { // вешаем на id="container" событие .onclick
+    if (event.target.className != 'remove-button') return; // если элемент (цель) не имеет нужный атрибут 'remove-button', возвращаем
+
+    let pane = event.target.closest('.pane'); // ищем ближайший родительский элемент класса 'pane'
+    pane.remove(); // удаляем класс 'pane'
+};
 
 
 
