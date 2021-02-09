@@ -873,20 +873,51 @@
 // Всё, что нам необходимо, это поймать событие contents.onclick и использовать функцию confirm, чтобы задать вопрос пользователю.
 // Хорошей идеей было бы использовать link.getAttribute('href') вместо link.href для ссылок. Смотрите решение в песочнице.
 
-contents.onclick = function(event) {
+// contents.onclick = function(event) {
+//
+//     function handleLink(href) {
+//         let isLeaving = confirm(`Leave for ${href}?`);
+//         if (!isLeaving) return false;
+//     }
+//
+//     let target = event.target.closest('a'); // возвращает ближайший родительский элемент (или сам элемент),
+//     // который соответствует заданному CSS-селектору или null, если таковых элементов вообще нет.
+//
+//     if (target && contents.contains(target)) { // возвращает Boolean значение, указывающее, является ли узел потомком данного узла, т. е.
+//         // сам узел, один из его прямых потомков ( childNodes ), один из детей его детей и так далее.
+//         return handleLink(target.getAttribute('href')); // возвращает в функцию значение указанного атрибута элемента. Если элемент
+//         // не содержит данный атрибут, могут быть возвращены null или "" (пустая строка);
+//     }
+// };
 
-    function handleLink(href) {
-        let isLeaving = confirm(`Leave for ${href}?`);
-        if (!isLeaving) return false;
-    }
+// Task 7
 
-    let target = event.target.closest('a'); // возвращает ближайший родительский элемент (или сам элемент),
-    // который соответствует заданному CSS-селектору или null, если таковых элементов вообще нет.
+// Галерея изображений
+// Создайте галерею изображений, в которой основное изображение изменяется при клике на уменьшенный вариант.
 
-    if (target && contents.contains(target)) { // возвращает Boolean значение, указывающее, является ли узел потомком данного узла, т. е.
-        // сам узел, один из его прямых потомков ( childNodes ), один из детей его детей и так далее.
-        return handleLink(target.getAttribute('href')); // возвращает в функцию значение указанного атрибута элемента. Если элемент
-        // не содержит данный атрибут, могут быть возвращены null или "" (пустая строка);
-    }
-};
+// P.S. Используйте делегирование.
+
+// Решение состоит в том, чтобы добавить обработчик на контейнер #thumbs и отслеживать клики на ссылках.
+// Если клик происходит по ссылке <a>, тогда меняем атрибут src элемента #largeImg на href уменьшенного изображения.
+
+thumbs.onclick = function(event) {
+    let thumbnail = event.target.closest('a'); // возвращает ближайший родительский элемент (или сам элемент)
+
+    if (!thumbnail) return;
+    showThumbnail(thumbnail.href, thumbnail.title);
+
+    // .href - это USVString, содержащий URL целиком.
+    // .title - свойство представляет заголовок элемента.
+
+    event.preventDefault(); // отмена действия браузера по умолчанию.
+}
+
+function showThumbnail(href, title) {
+    largeImg.src = href;
+    largeImg.alt = title;
+
+    // .src - ссылка на изображение.
+    // .alt - текст картинки.
+
+}
 
