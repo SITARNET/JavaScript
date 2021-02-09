@@ -1066,22 +1066,88 @@
 // отменить действие по умолчанию через event.preventDefault(). Тогда кролик не исчезнет:
 
 // hide() будет вызван автоматически через 2 секунды
-function hide() {
-    let event = new CustomEvent("hide", {
-        cancelable: true // без этого флага preventDefault не сработает
-    });
-    if (!rabbit.dispatchEvent(event)) {
-        alert('Действие отменено обработчиком');
-    } else {
-        rabbit.hidden = true;
-    }
-}
+// function hide() {
+//     let event = new CustomEvent("hide", {
+//         cancelable: true // без этого флага preventDefault не сработает
+//     });
+//     if (!rabbit.dispatchEvent(event)) {
+//         alert('Действие отменено обработчиком');
+//     } else {
+//         rabbit.hidden = true;
+//     }
+// }
+//
+// rabbit.addEventListener('hide', function(event) {
+//     if (confirm("Вызвать preventDefault?")) {
+//         event.preventDefault();
+//     }
+// });
 
-rabbit.addEventListener('hide', function(event) {
-    if (confirm("Вызвать preventDefault?")) {
-        event.preventDefault();
-    }
-});
+// Обратите внимание: событие должно содержать флаг cancelable: true. Иначе, вызов event.preventDefault() будет проигнорирован.
+
+// Вложенные события обрабатываются синхронно
+
+// Обычно события обрабатываются асинхронно. То есть, если браузер обрабатывает onclick и в процессе этого произойдёт
+// новое событие, то оно ждёт, пока закончится обработка onclick.
+// Исключением является ситуация, когда событие инициировано из обработчика другого события.
+// Тогда управление сначала переходит в обработчик вложенного события и уже после этого возвращается назад.
+
+// В примере ниже событие menu-open обрабатывается синхронно во время обработки onclick:
+
+// menu.onclick = function() {
+//     alert(1);
+//
+//     // alert("вложенное событие")
+//     menu.dispatchEvent(new CustomEvent("menu-open", {
+//         bubbles: true
+//     }));
+//
+//     alert(2);
+// };
+//
+// document.addEventListener('menu-open', () => alert('вложенное событие'))
+
+// Порядок вывода: 1 → вложенное событие → 2.
+// Обратите внимание, что вложенное событие menu-open успевает всплыть и запустить обработчик на document.
+// Обработка вложенного события полностью завершается до того, как управление возвращается во внешний код (onclick).
+// Это справедливо не только для dispatchEvent, но и для других ситуаций. JavaScript в обработчике события может
+// вызвать другие методы, которые приведут к другим событиям – они тоже обрабатываются синхронно.
+// Если нам это не подходит, то мы можем либо поместить dispatchEvent (или любой другой код, инициирующий события)
+// в конец обработчика onclick, либо, если это неудобно, можно обернуть генерацию события в setTimeout с нулевой задержкой:
+
+menu.onclick = function() {
+    alert(1);
+
+    // alert(2)
+    setTimeout(() => menu.dispatchEvent(new CustomEvent("menu-open", {
+        bubbles: true
+    })));
+
+    alert(2);
+};
+
+document.addEventListener('menu-open', () => alert('вложенное событие'));
+
+// Теперь dispatchEvent запускается асинхронно после исполнения текущего кода, включая mouse.onclick, поэтому обработчики полностью независимы.
+// Новый порядок вывода: 1 → 2 → вложенное событие.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
