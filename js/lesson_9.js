@@ -466,39 +466,43 @@
 grid.onclick = function(e) {
     if (e.target.tagName != 'TH') return;
 
-    let th = e.target;
+    let th = e.target; // цель
     // если ячейка TH, тогда сортировать
     // cellIndex - это номер ячейки th:
     //   0 для первого столбца
     //   1 для второго и т.д.
-    sortGrid(th.cellIndex, th.dataset.type);
+    sortGrid(th.cellIndex, th.dataset.type); // номер ячейки в строке, data-type = number или string
 };
 
 function sortGrid(colNum, type) {
-    let tbody = grid.querySelector('tbody');
+    let tbody = grid.querySelector('tbody'); // озвращает первый элемент (Element) документа,
+    // который соответствует указанному селектору или группе селекторов.
 
-    let rowsArray = Array.from(tbody.rows);
+    let rowsArray = Array.from(tbody.rows); // создаём массив из коллекции строк tr в tbody
 
     // compare(a, b) сравнивает две строки, нужен для сортировки
     let compare;
 
     switch (type) {
-        case 'number':
+        case 'number': // если число
             compare = function(rowA, rowB) {
-                return rowA.cells[colNum].innerHTML - rowB.cells[colNum].innerHTML;
+                return rowA.cells[colNum].innerHTML - rowB.cells[colNum].innerHTML; // возвращаем разницу
+                // значения (HTML разметка дочерного элемента) ячейки в переменной rowA и
+                // значения (HTML разметка дочерного элемента) ячейки в переменной rowB
             };
             break;
-        case 'string':
+        case 'string': // если строка
             compare = function(rowA, rowB) {
-                return rowA.cells[colNum].innerHTML > rowB.cells[colNum].innerHTML ? 1 : -1;
+                return rowA.cells[colNum].innerHTML > rowB.cells[colNum].innerHTML ? 1 : -1; // если
+                // значения (HTML разметка дочерного элемента) ячейки в переменной rowA больше
+                // значения (HTML разметка дочерного элемента) ячейки в переменной rowB, то = 1, иначе = -1
             };
             break;
     }
 
-    // сортировка
-    rowsArray.sort(compare);
+    rowsArray.sort(compare); // на месте сортирует элементы массива и возвращает отсортированный массив.
 
-    tbody.append(...rowsArray);
+    tbody.append(...rowsArray); // добавлет в конец, расширяет массив где несколько аргументов (расскрывает массив)
 }
 
 
